@@ -1,2 +1,2 @@
 # n_fractal
-A simple fractal generator that uses minilibx.
+A simple C fractal generator that uses minilibx.
