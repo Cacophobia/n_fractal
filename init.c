@@ -6,16 +6,22 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:16:57 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/03 21:26:32 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/09 23:17:13 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "h_fractal.h"
+#include "fractol.h"
 
 static void	malloc_error(void)
 {
 	perror("SOMETHING BAD HAPPENED!!");
 	exit(EXIT_FAILURE);
+}
+
+void	data_init(t_fractal *fractal)
+{
+	fractal->esc_value = 4;
+	fractal->nof_iterations = 42;
 }
 
 void	fractal_init(t_fractal *fractal, char *name)
@@ -46,5 +52,5 @@ void	fractal_init(t_fractal *fractal, char *name)
 			&fractal->image.bits,
 			&fractal->image.line_len, &fractal->image.endian);
 	//TODO: events_init(fractal);
-	//TODO: data_init(fractal);
+	data_init(fractal);
 }

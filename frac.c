@@ -6,11 +6,11 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:44:59 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/03 21:25:37 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/09 23:22:23 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "h_fractal.h"
+#include "fractol.h"
 
 int	main(int argc, char **argv)
 {
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		//first function
 		fractal_init(&fractal, argv[1]);
 		//second function
-//TODO:		fractal_render(&fractal);
+		fractal_render(&fractal);
 		mlx_loop(fractal.mlx_connect);
 	}
 	else if (argc == 4 && !ft_strncmp(argv[1], "julia", 5))

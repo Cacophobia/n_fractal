@@ -6,13 +6,13 @@
 #    By: nranna <nranna@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 12:06:45 by nranna            #+#    #+#              #
-#    Updated: 2024/04/03 20:29:04 by nranna           ###   ########.fr        #
+#    Updated: 2024/04/09 23:26:29 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CCFLAGS = -Wall -Wextra -Werror
-LIBXFLAGS = -L. -lXext -L. -lX11
+LIBXFLAGS = -L. -lXext -L. -lX11 -lm
 NAME = executable
 COLOR_GREEN = \033[1;32m
 
@@ -23,7 +23,7 @@ MINILIBX_PATH = ./minilibx_linux
 MINILIBX = ${MINILIBX_PATH}/libmlx.a
 
 # PROGRAM FILES
-SRC = frac.c string_utils.c init.c
+SRC = frac.c string_utils.c init.c math_utils.c render.c
 INCLUDE = h_fractal.h
 
 OBJ = $(SRC:.c=.o)

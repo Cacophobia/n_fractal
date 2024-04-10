@@ -6,11 +6,11 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 15:06:36 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/03 18:55:13 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/09 23:18:08 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "h_fractal.h"
+#include "fractol.h"
 
 int	ft_strlen(char *s)
 {
