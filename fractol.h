@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:59:09 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/09 23:26:13 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/10 12:01:58 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 # include <unistd.h>
 # include <math.h>
 # include "minilibx_linux/mlx.h"
+# include <X11/X.h>
 
 //TODO: make a better error message
 #define ERROR_MSG "CORRECT USAGE: ./executable.out <mandelbrot | julia>\n"
-#define WID 400
-#define HEI 400
+#define WID 800
+#define HEI 800
 //TODO: define more shit
 
 #define B 0x000000
@@ -66,10 +67,16 @@ int	ft_strncmp(char *s1, char *s2, int n);
 int	ft_strlen(char *s);
 void	ft_putstr_fd(char *s, int fd);
 //init
+void	events_init(t_fractal *fractal);
 void	fractal_init(t_fractal *fractal, char *name);
 
 //render
 void	fractal_render(t_fractal *fractal);
+
+//hooks
+int	key_handle(int keysym, t_fractal *fractal);
+/*int	key_handle(int keysym, t_fractal *fractal);
+int	key_handle(int keysym, t_fractal *fractal);*/
 
 //math... linear interpolation
 double	rescale_map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);

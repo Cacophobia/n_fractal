@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:16:57 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/09 23:17:13 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/10 11:51:11 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,14 @@ static void	malloc_error(void)
 void	data_init(t_fractal *fractal)
 {
 	fractal->esc_value = 4;
-	fractal->nof_iterations = 42;
+	fractal->nof_iterations = 84;
+}
+
+void	events_init(t_fractal *fractal)
+{
+	mlx_hook(fractal->mlx_win, KeyPress, KeyPressMask, key_handle, fractal);
+/*	mlx_hook(fractal->mlx_win, ButtonPress, ButtonPressMask, mouse_handle, fractal);
+	mlx_hook(fractal->mlx_win, DestroyNotify, StructureNotifyMask, close_handle, fractal); */
 }
 
 void	fractal_init(t_fractal *fractal, char *name)
@@ -37,9 +44,9 @@ void	fractal_init(t_fractal *fractal, char *name)
 		free(fractal->mlx_connect);
 		malloc_error();
 	}
-	fractal->image.img_ptr = mlx_new_image(fractal->mlx_connect,
-			WID, HEI);
-	if (fractal->image.img_ptr)
+	//THERE'S AN ERROR IN HERE \/
+	fractal->image.img_ptr = mlx_new_image(fractal->mlx_connect, WID, HEI);
+	if (fractal->image.img_ptr == NULL)
 	{
 		mlx_destroy_window(fractal->mlx_connect, fractal->mlx_win);
 		mlx_destroy_display(fractal->mlx_connect);
@@ -48,9 +55,7 @@ void	fractal_init(t_fractal *fractal, char *name)
 	}
 	//that is the start of something that might not be correct... 
 	//TODO: check if there's a better way of doing that!
-	fractal->image.pix_ptr = mlx_get_data_addr(fractal->image.img_ptr,
-			&fractal->image.bits,
-			&fractal->image.line_len, &fractal->image.endian);
-	//TODO: events_init(fractal);
+	fractal->image.pix_ptr = mlx_get_data_addr(fractal->image.img_ptr, &fractal->image.bits, &fractal->image.line_len, &fractal->image.endian);
+	events_init(fractal);
 	data_init(fractal);
 }

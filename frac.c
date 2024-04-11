@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:44:59 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/09 23:22:23 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/10 09:56:07 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int argc, char **argv)
 
 	if (argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10))
 	{
-		//TODO implement mandelbrot set
 		ft_putstr_fd("you choose mandelbrot set :)\n", 1);
 		//first function
 		fractal_init(&fractal, argv[1]);

@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 21:28:05 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/09 23:29:10 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/10 11:19:23 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,39 +39,30 @@ static void	handle_pix(int x, int y, t_fractal *fractal)
 	{
 		z = sum_complex(square_complex(z), c);
 		//did the point escape?
-		if ((pow(z.x, 2)) + (pow(z.y, 2)) > fractal->esc_value)
+		if ((z.x * z.x) + (z.y * z.y) > fractal->esc_value)
 		{
 			//we left mandel
 			color = rescale_map(i, B, W, 0, fractal->nof_iterations);
 			my_pixel_put(x, y, &fractal->image, color);
 			return ;
 		}
-
 		//we're in mandel
 		i++;
 	}
-	my_pixel_put(x, y, &fractal->image, R);
+	my_pixel_put(x, y, &fractal->image, 0xFF007F);
 }
 
 void	fractal_render(t_fractal *fractal)
 {
 	int	x;
 	int	y;
-	
-	x = 0;
-	y = 0;
-	while (y < HEI)
+
+	y = -1;
+	while (++y < HEI)
 	{
-		x = 0;
-		while (x < WID)
-		{
+		x = -1;
+		while (++x < WID)
 			handle_pix(x, y, fractal);
-			y++;
-		}
-		x++;
 	}
-	mlx_put_image_to_window(fractal->mlx_connect,
-				fractal->mlx_win,
-				fractal->image.img_ptr,
-				0, 0);
+	mlx_put_image_to_window(fractal->mlx_connect, fractal->mlx_win, fractal->image.img_ptr, 0 ,0);
 }
