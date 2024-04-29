@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:44:59 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/10 09:56:07 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/19 14:19:08 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ int	main(int argc, char **argv)
 	if (argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10))
 	{
 		ft_putstr_fd("you choose mandelbrot set :)\n", 1);
-		//first function
 		fractal_init(&fractal, argv[1]);
-		//second function
 		fractal_render(&fractal);
 		mlx_loop(fractal.mlx_connect);
 	}
@@ -33,7 +31,6 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_putstr_fd(ERROR_MSG, 1);
-		//TODO: show correct usage
 	}
 	return (0);
 }

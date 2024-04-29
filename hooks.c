@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:38:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/10 11:50:02 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/19 13:59:45 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	key_handle(int keysym, t_fractal *fractal)
 {
-	printf("%d", keysym);
-	return (0);
+	if (keysym == XK_Escape)
+		return (0);
+	
 }

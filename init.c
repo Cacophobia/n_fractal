@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:16:57 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/10 11:51:11 by nranna           ###   ########.fr       */
+/*   Updated: 2024/04/19 13:48:17 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ static void	malloc_error(void)
 	exit(EXIT_FAILURE);
 }
 
-void	data_init(t_fractal *fractal)
+static void	data_init(t_fractal *fractal)
 {
 	fractal->esc_value = 4;
 	fractal->nof_iterations = 84;
 }
 
-void	events_init(t_fractal *fractal)
+static void	events_init(t_fractal *fractal)
 {
 	mlx_hook(fractal->mlx_win, KeyPress, KeyPressMask, key_handle, fractal);
 /*	mlx_hook(fractal->mlx_win, ButtonPress, ButtonPressMask, mouse_handle, fractal);
