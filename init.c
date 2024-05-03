@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:16:57 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/19 13:48:17 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/03 11:10:58 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	data_init(t_fractal *fractal)
 	fractal->nof_iterations = 84;
 }
 
-static void	events_init(t_fractal *fractal)
+void	events_init(t_fractal *fractal)
 {
 	mlx_hook(fractal->mlx_win, KeyPress, KeyPressMask, key_handle, fractal);
 /*	mlx_hook(fractal->mlx_win, ButtonPress, ButtonPressMask, mouse_handle, fractal);

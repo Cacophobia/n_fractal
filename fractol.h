@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:59:09 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/19 14:26:17 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/03 14:14:53 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <math.h>
-# include "minilibx_linux/mlx.h"
+# include "minilibx-linux/mlx.h"
 # include <X11/X.h>
 
 //TODO: make a better error message

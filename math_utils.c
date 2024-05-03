@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:46:53 by nranna            #+#    #+#             */
-/*   Updated: 2024/04/09 23:19:30 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/03 11:18:00 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ double	rescale_map(double unscaled_num, double new_min, double new_max, double o
 	proportion = (unscaled_num - old_min) / (old_max - old_min);
 	rescaled_value = proportion * (new_max - new_min);
 	return (rescaled_value + new_min);
-	//return (new_max - new_min) * (unscaled_number - old_min) / (old_max - old_min) + new_min;
 }
 
 t_complex	sum_complex(t_complex z1, t_complex z2)
