@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:38:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/03 15:15:12 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/03 16:10:15 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ int	key_handle(int keysym, t_fractal *fractal)
 		fractal->shift_y -= 0.25;
 	else if (keysym == XK_Down)
 		fractal->shift_y += 0.25;
-/*
-	else if (keysym == XK_plus)
+
+	else if (keysym == XK_Page_Up)
 		fractal->nof_iterations += 10;
-	else if (keysym == XK_minus)
+	else if (keysym == XK_Page_Down)
 		fractal->nof_iterations -= 10;
-*/
+
 	fractal_render(fractal);
 		return (0);
 }
