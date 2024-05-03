@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:59:09 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/03 14:14:53 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/03 15:08:13 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <math.h>
 # include "minilibx-linux/mlx.h"
 # include <X11/X.h>
+# include <X11/keysym.h>
 
 //TODO: make a better error message
 # define ERROR_MSG "CORRECT USAGE: ./executable.out <mandelbrot | julia>\n"
@@ -51,6 +52,8 @@ typedef struct s_fractal
 	//TODO: hooks..?
 	double	esc_value;
 	int		nof_iterations;
+	double	shift_x;
+	double	shift_y;
 }	t_fractal;
 
 //complex
@@ -76,6 +79,8 @@ void	fractal_render(t_fractal *fractal);
 int	key_handle(int keysym, t_fractal *fractal);
 /*int	key_handle(int keysym, t_fractal *fractal);
 int	key_handle(int keysym, t_fractal *fractal);*/
+//close
+int	close_handle(t_fractal *fractal);
 
 //math... linear interpolation
 double		rescale_map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
