@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 21:28:05 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/03 14:45:26 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/03 20:50:49 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static void	handle_pix(int x, int y, t_fractal *fractal)
 	z.y = 0.0;
 	i = 0;
 	//pix cordinates (x && y) scaled to fit on minilibx map
-	c.x = rescale_map(x, -2, +2, 0, WID) + fractal->shift_x;
-	c.y = rescale_map(y, +2, -2, 0, HEI) + fractal->shift_y;
+	c.x = (rescale_map(x, -2, +2, 0, WID) * fractal->zoom) + fractal->shift_x;
+	c.y = (rescale_map(y, +2, -2, 0, HEI) * fractal->zoom) + fractal->shift_y;
 	
 	//TODO the more iterations you have to do, the worst it get.
 	while (i < fractal->nof_iterations)

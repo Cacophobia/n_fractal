@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:59:09 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/03 15:08:13 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/03 20:57:05 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define ERROR_MSG "CORRECT USAGE: ./executable.out <mandelbrot | julia>\n"
 # define WID 800
 # define HEI 800
+
 //TODO: define more shit
 
 # define B 0x000000
@@ -54,6 +55,7 @@ typedef struct s_fractal
 	int		nof_iterations;
 	double	shift_x;
 	double	shift_y;
+	double	zoom;
 }	t_fractal;
 
 //complex
@@ -65,6 +67,7 @@ typedef struct s_complex
 	double	y;
 }	t_complex;
 
+//str_utils
 int	ft_strncmp(char *s1, char *s2, int n);
 int	ft_strlen(char *s);
 void	ft_putstr_fd(char *s, int fd);
@@ -77,10 +80,10 @@ void	fractal_render(t_fractal *fractal);
 
 //hooks
 int	key_handle(int keysym, t_fractal *fractal);
-/*int	key_handle(int keysym, t_fractal *fractal);
-int	key_handle(int keysym, t_fractal *fractal);*/
+
 //close
 int	close_handle(t_fractal *fractal);
+int	mouse_handle(int button, int x, int y, t_fractal *fractal);
 
 //math... linear interpolation
 double		rescale_map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
