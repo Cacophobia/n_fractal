@@ -6,12 +6,12 @@
 #    By: nranna <nranna@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 12:06:45 by nranna            #+#    #+#              #
-#    Updated: 2024/05/03 20:41:42 by nranna           ###   ########.fr        #
+#    Updated: 2024/05/04 21:35:15 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CCFLAGS = -g#-Wall -Wextra -Werror
+CCFLAGS = -Ofast #-Wall -Wextra -Werror
 LIBXFLAGS = -lmlx_Linux -L./minilibx-linux -lXext -lX11 -lm
 NAME = executable
 GREEN = \033[1;32m

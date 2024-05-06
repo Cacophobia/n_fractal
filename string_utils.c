@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 15:06:36 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/03 22:28:00 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/06 12:05:12 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ int	ft_strncmp(char *s1, char *s2, int n)
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	int	i;	
 	if (!s || fd < 0)
 		return ;
-	write(fd, s, ft_strlen(s));
+	i = write(fd, s, ft_strlen(s));
+	(void)i;
 }

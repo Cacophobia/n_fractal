@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:38:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/03 20:54:57 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/06 11:52:56 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ int	key_handle(int keysym, t_fractal *fractal)
 	else if (keysym == XK_Page_Down)
 		fractal->nof_iterations -= 10;
 	fractal_render(fractal);
-		return (0);
+	return (0);
 }
 
 int	mouse_handle(int button, int x, int y, t_fractal *fractal)
 {
 	if (button == Button5)
-		fractal->zoom *= 0.95; 
-	else if (button == Button4)
 		fractal->zoom *= 1.05;
+	else if (button == Button4)
+		fractal->zoom *= 0.95;
 	fractal_render(fractal);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:59:09 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/03 20:57:05 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/04 10:48:34 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ typedef struct s_fractal
 	void	*mlx_win;
 
 	t_image	image;
-	//TODO: hooks..?
 	double	esc_value;
 	int		nof_iterations;
 	double	shift_x;
@@ -58,18 +57,16 @@ typedef struct s_fractal
 	double	zoom;
 }	t_fractal;
 
-//complex
+//complex (x = real; y = imaginary)
 typedef struct s_complex
 {
-	//real
 	double	x;
-	//imaginary
 	double	y;
 }	t_complex;
 
 //str_utils
-int	ft_strncmp(char *s1, char *s2, int n);
-int	ft_strlen(char *s);
+int		ft_strncmp(char *s1, char *s2, int n);
+int		ft_strlen(char *s);
 void	ft_putstr_fd(char *s, int fd);
 //init
 void	events_init(t_fractal *fractal);
@@ -79,14 +76,16 @@ void	fractal_init(t_fractal *fractal, char *name);
 void	fractal_render(t_fractal *fractal);
 
 //hooks
-int	key_handle(int keysym, t_fractal *fractal);
+int		key_handle(int keysym, t_fractal *fractal);
 
 //close
-int	close_handle(t_fractal *fractal);
-int	mouse_handle(int button, int x, int y, t_fractal *fractal);
+int		close_handle(t_fractal *fractal);
+int		mouse_handle(int button, int x, int y, t_fractal *fractal);
 
 //math... linear interpolation
-double		rescale_map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
+double	rescale_map(double unscaled_num, double new_min,
+			double new_max, double old_min, double old_max);
 t_complex		square_complex(t_complex z);
 t_complex		sum_complex(t_complex z1, t_complex z2);
+
 #endif
