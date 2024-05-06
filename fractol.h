@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:59:09 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/04 10:48:34 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/06 16:20:09 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_fractal
 	t_image	image;
 	double	esc_value;
 	int		nof_iterations;
+	int		flag;
 	double	shift_x;
 	double	shift_y;
 	double	zoom;
@@ -67,7 +68,7 @@ typedef struct s_complex
 //str_utils
 int		ft_strncmp(char *s1, char *s2, int n);
 int		ft_strlen(char *s);
-void	ft_putstr_fd(char *s, int fd);
+void	ft_putstr_fd(char *s);
 //init
 void	events_init(t_fractal *fractal);
 void	fractal_init(t_fractal *fractal, char *name);

@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:16:57 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/03 20:29:06 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/06 15:08:30 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	fractal_init(t_fractal *fractal, char *name)
 		free(fractal->mlx_connect);
 		malloc_error();
 	}
-	//THERE'S AN ERROR IN HERE \/
 	fractal->image.img_ptr = mlx_new_image(fractal->mlx_connect, WID, HEI);
 	if (fractal->image.img_ptr == NULL)
 	{
@@ -56,8 +55,6 @@ void	fractal_init(t_fractal *fractal, char *name)
 		free(fractal->mlx_connect);
 		malloc_error();
 	}
-	//that is the start of something that might not be correct... 
-	//TODO: check if there's a better way of doing that!
 	fractal->image.pix_ptr = mlx_get_data_addr(fractal->image.img_ptr, &fractal->image.bits, &fractal->image.line_len, &fractal->image.endian);
 	events_init(fractal);
 	data_init(fractal);
