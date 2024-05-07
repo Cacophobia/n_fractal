@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:59:09 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/06 21:28:32 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/06 21:36:48 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int		mouse_handle(int button, int x, int y, t_fractal *fractal);
 //math... linear interpolation
 double	rescale_map(double unscaled_num, double new_min,
 			double new_max, double old_max);
-t_complex		square_complex(t_complex z);
-t_complex		sum_complex(t_complex z1, t_complex z2);
+t_complex	square_complex(t_complex z);
+t_complex	sum_complex(t_complex z1, t_complex z2);
 
 #endif
