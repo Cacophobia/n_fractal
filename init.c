@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:16:57 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/06 15:08:30 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/06 21:25:45 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ static void	data_init(t_fractal *fractal)
 
 void	events_init(t_fractal *fractal)
 {
-	mlx_hook(fractal->mlx_win, KeyPress, KeyPressMask, key_handle, fractal);
-	mlx_hook(fractal->mlx_win, ButtonPress, ButtonPressMask, mouse_handle, fractal);
-	mlx_hook(fractal->mlx_win, DestroyNotify, StructureNotifyMask, close_handle, fractal);
+	mlx_hook(fractal->mlx_win, KeyPress,
+		KeyPressMask, key_handle, fractal);
+	mlx_hook(fractal->mlx_win, ButtonPress,
+		ButtonPressMask, mouse_handle, fractal);
+	mlx_hook(fractal->mlx_win, DestroyNotify,
+		StructureNotifyMask, close_handle, fractal);
 }
 
 void	fractal_init(t_fractal *fractal, char *name)
@@ -55,7 +58,9 @@ void	fractal_init(t_fractal *fractal, char *name)
 		free(fractal->mlx_connect);
 		malloc_error();
 	}
-	fractal->image.pix_ptr = mlx_get_data_addr(fractal->image.img_ptr, &fractal->image.bits, &fractal->image.line_len, &fractal->image.endian);
+	fractal->image.pix_ptr = mlx_get_data_addr(fractal->image.img_ptr,
+			&fractal->image.bits, &fractal->image.line_len,
+			&fractal->image.endian);
 	events_init(fractal);
 	data_init(fractal);
 }

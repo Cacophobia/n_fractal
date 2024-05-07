@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 21:28:05 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/06 16:37:19 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/06 21:34:09 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,27 @@ void	fractal_render(t_fractal *fractal)
 		while (++x < WID)
 			handle_pix(x, y, fractal);
 	}
-	mlx_put_image_to_window(fractal->mlx_connect, fractal->mlx_win, fractal->image.img_ptr, 0 ,0);
+	mlx_put_image_to_window(fractal->mlx_connect, fractal->mlx_win,
+		fractal->image.img_ptr, 0, 0);
 }
 
 static void	handle_pix(int x, int y, t_fractal *fractal)
 {
 	t_complex	z;
 	t_complex	c;
-	int		i;
-	int		color;
+	int			i;
+	int			color;
 
 	i = 0;
-	z.x = (rescale_map(x, -2, +2, 0, WID) * fractal->zoom) + fractal->shift_x;
-	z.y = (rescale_map(y, +2, -2, 0, HEI) * fractal->zoom) + fractal->shift_y;
+	z.x = (rescale_map(x, -2, +2, WID) * fractal->zoom) + fractal->shift_x;
+	z.y = (rescale_map(y, +2, -2, HEI) * fractal->zoom) + fractal->shift_y;
 	mandel_vs_julia(&z, &c, fractal);
 	while (i < fractal->nof_iterations)
 	{
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) + (z.y * z.y) > fractal->esc_value)
 		{
-			color = rescale_map(i, B, W, 0, fractal->nof_iterations);
+			color = rescale_map(i, B, W, fractal->nof_iterations);
 			my_pixel_put(x, y, &fractal->image, color);
 			return ;
 		}

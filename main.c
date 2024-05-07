@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:44:59 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/06 16:28:50 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/06 16:44:39 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 
 static void	start_fractal(t_fractal *fractal, char *name)
 {
-		fractal_init(fractal, name);
-		fractal_render(fractal);
-		mlx_loop(fractal->mlx_connect);
+	fractal_init(fractal, name);
+	fractal_render(fractal);
+	mlx_loop(fractal->mlx_connect);
 }

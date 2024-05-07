@@ -6,19 +6,20 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:46:53 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/03 11:18:00 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/06 21:30:51 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <math.h>
 
-double	rescale_map(double unscaled_num, double new_min, double new_max, double old_min, double old_max)
+double	rescale_map(double unscaled_num, double new_min,
+					double new_max, double old_max)
 {
 	double	proportion;
 	double	rescaled_value;
 
-	proportion = (unscaled_num - old_min) / (old_max - old_min);
+	proportion = (unscaled_num - 0) / (old_max - 0);
 	rescaled_value = proportion * (new_max - new_min);
 	return (rescaled_value + new_min);
 }
